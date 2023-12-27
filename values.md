@@ -45,3 +45,12 @@ It's easy to get overwhelmed with a level of cognitive load given the nature of 
 
 ### We Succeed Together
 Every person is a member of the team, and should never feel alone. We are here to help one another through pairing, mentoring, and teaching.
+
+### A Blameless Environment
+We don't seek to blame people when things go wrong. We look to move fast and fix things, assess, then learn so it doesn't happen again.
+
+### Continually Improve
+We think innovation comes from people who do the work. So we seek to continually improve our processes by sharing knowledge routinely and communicating the things that work best for us.
+
+### We are the culture
+Each of us individually share a part in maintaining and setting the engineering culture. Therefore we must model the behavior that we wish to see.
