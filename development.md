@@ -8,15 +8,15 @@ We are a small team today, so we may not release every day or every week, but ou
 We recognize this is not always possible, but we strive to do so as a primary way of developing.
 
 ### From idea to production
-Our product team operates product planning in "Now", "Next" and "Later" columns in [Notion](https://www.notion.so/). Those issues in now and sometimes next will be those represented in our project management tool, [JIRA](https://peersupply.atlassian.net/).
+Our product team operates product planning in "Now", "Next" and "Later" columns in [Notion](https://www.notion.so/). Those issues in now and sometimes next will be those represented in our project management tool, JIRA.
 
 Once it's decided we're going to execute on work either from the product planning board or from technical debt tickets we have created as an engineering team, groom them, point them, and order them in the backlog as a whole team, together with product, design, and engineers.
 
 ### Track our work
-We use tools like [JIRA](https://peersupply.atlassian.net/) to track our work efficiently. Instead of leaving a todo or a comment in our codebase, opt to make a comment or add to the acceptance criteria on the ticket associated with the future work you intend to do. Comments rarely get updated and todos hardly ever get done when left in code. This gives us clear records of what we need to do and when.
+We use tools like JIRA to track our work efficiently. Instead of leaving a todo or a comment in our codebase, opt to leave a comment on the associated work. Comments rarely get updated and todos hardly ever get done when left in code. This gives us clear records of what we need to do and when. Sometimes an entirely new ticket will be necessary. If work is discovered that will increase the scope of a current ticket in progress, that ticket may need to be re-refined by our process.
 
 ### Build for each other
-When building components and services in our codebase think about your teammates. Think about how the code you're writing will be _read_ by others and if the code you are writing could be rewritten to be _used_ by others. Think about your naming and is it clear and consistent. Could the issue you're creating a function for possibly come up in other areas? Keeping these in mind will allow us to build utilities that will speed us up as we continue to build for the long term. 
+When building components and services in our codebase think about your teammates. Think about how the code you're writing will be _read_ by others and if the code you are writing could be rewritten to be _used_ by others. Think about your naming and is it clear and consistent. Could the issue you're creating a function for possibly come up in other areas? Keeping these in mind will allow us to build utilities that will speed us up as we continue to build for the long term. Keep in mind to [Avoid Hasty Abstractions](https://kentcdodds.com/blog/aha-programming) and strike a balance. 
 
 #### Estimation
 We use story points for our estimation instead of time since we have different skill levels on our team. We use fibonnacci numbers for pointing - 1, 2, 3, 5, 8, 13...
