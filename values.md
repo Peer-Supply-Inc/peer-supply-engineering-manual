@@ -26,7 +26,7 @@
 - We believe in pragmatic programming
 
 
-### Perfect is the enemy of done, and sloppy (come up with better word for sloppy) is the enemy of our customers and colleagues
+### Perfect is the enemy of done, and sloppy is the enemy of our customers and colleagues
 - We prioritize pragmatic delivery of our work. Our job is to help the company succeed, and part of that is making trade-offs.
 - We never make trade-offs that include:
     - Introducing significant technical debt to the detriment of our future engineering efforts
