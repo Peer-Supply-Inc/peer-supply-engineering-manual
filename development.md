@@ -25,7 +25,7 @@ We use story points for our estimation instead of time since we have different s
 - For most issues, we should land around 3 or 5, with 3 meaning it is a reasonably sized ticket, 5 meaning it's reasonably sized but with some caveats / extra considerations. 8 is a large ticket, which requires extra attention.
 
 #### Work assignment
-It is up to the team to self-assign tickets as they are working on them. This should be based on the tickets included in sprint planning, and if those are complete, prioritized based on tickets in the engineer's focus area in the backlog.
+It is up to the team to self-assign tickets as they are working on them. This should be based on the tickets included in sprint planning, and if those are complete, prioritized based on tickets in the engineer's focus area in the backlog. Tickets should only be assigned when they are actively in progress. Ideally only one ticket should be in progress at a time. Exceptions are when a ticket is being reworked from QA and/or PR review, or when tickets are small and closely related enough to make sense to do together.
 
 #### Statuses
 Jira statuses should be updated for different states of work. If work is in progress, ready for code review, or ready for deployment it should always reflect that to make it easy for others to see and work with asynchronously
@@ -48,3 +48,6 @@ A reviewer should be able to assess in a PR review 1. Is the feature code comple
 Deployments are done using CI/CD. Currently both primary Peer Supply repos automatically deploy to production when a push is made to the main branch. Smoke testing should be conducted after a feature has been deployed.
 
 Rollbacks: We currently use Cloud Run for our API and our front-end. If a major bug is discovered on production, the previous revision in Cloud Run should be served until a fix or rollback commit has made it through the PR review process.
+
+#### Post-deployment production changes
+Periodically activities need to be done on production manually, though this should be the exception and automated where possible. Each engineer is individually responsible for shepherding those changes (manual database change, api call to make, etc) after deployment
