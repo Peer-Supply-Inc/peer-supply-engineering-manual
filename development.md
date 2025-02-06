@@ -1,7 +1,6 @@
 ## Development Processes
 We are constantly learning and changing, so expect to change this document as we improve.
 
-
 ### Aim towards continuous delivery
 We are a small team today, so we may not release every day or every week, but our aim is to move things to production quickly. This means breaking down work in a way that we can safely deploy new features and functionality behind flags until it is customer-ready.
 
@@ -19,7 +18,7 @@ We use tools like JIRA to track our work efficiently. Instead of leaving a todo 
 When building components and services in our codebase think about your teammates. Think about how the code you're writing will be _read_ by others and if the code you are writing could be rewritten to be _used_ by others. Think about your naming and is it clear and consistent. Could the issue you're creating a function for possibly come up in other areas? Keeping these in mind will allow us to build utilities that will speed us up as we continue to build for the long term. Keep in mind to [Avoid Hasty Abstractions](https://kentcdodds.com/blog/aha-programming) and strike a balance. 
 
 #### Estimation
-We use story points for our estimation instead of time since we have different skill levels on our team. We use fibonnacci numbers for pointing - 1, 2, 3, 5, 8, 13...
+We use story points for our estimation instead of time since we have different skill levels on our team. We use Fibonacci numbers for pointing - 1, 2, 3, 5, 8, 13...
 
 - If a ticket is larger than an 8, it's probably too large. We should try to break it down
 - For most issues, we should land around 3 or 5, with 3 meaning it is a reasonably sized ticket, 5 meaning it's reasonably sized but with some caveats / extra considerations. 8 is a large ticket, which requires extra attention.
@@ -48,3 +47,49 @@ A reviewer should be able to assess in a PR review 1. Is the feature code comple
 Deployments are done using CI/CD. Currently both primary Peer Supply repos automatically deploy to production when a push is made to the main branch. Smoke testing should be conducted after a feature has been deployed.
 
 Rollbacks: We currently use Cloud Run for our API and our front-end. If a major bug is discovered on production, the previous revision in Cloud Run should be served until a fix or rollback commit has made it through the PR review process.
+
+### Enforcing Commit Message Standards with Git Hooks
+Our repositories enforce strict commit message standards using a Git hook. By running:
+
+```sh
+git config core.hooksPath .githooks
+```
+
+developers ensure their commits adhere to the [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/). This ensures consistency, improves changelog generation, and maintains traceability with Jira tickets.
+
+#### Commit Message Requirements
+
+1. **No Direct Commits to `main`**  
+   - Direct commits to `main` are blocked unless they are merge commits.
+   - Developers must use feature branches and submit pull requests.
+
+2. **Conventional Commits Format**  
+   - All commits must follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) format:
+     
+     ```
+     <type>(<scope>): <description>
+     ```
+   - Allowed types: feat, fix, perf, refactor, style, test, chore, docs, hotfix, build
+
+3. **Jira Ticket Requirement for Features**  
+   - Commits of type `feat` must include a Jira ticket at the end in the format `PS-###`.
+   - Example: `feat(ui): add new button PS-123`
+4. **Commit Message Length**
+   - The commit message must be less than 72 characters.
+   - If the commit message is longer than 72 characters, the commit will be rejected.
+
+#### Setting Up the Hook
+Ensure the Git hooks are properly configured by running:
+
+```sh
+git config core.hooksPath .githooks
+```
+
+Once set, every commit message will be automatically validated before being recorded in the repository.
+
+## Why This Matters
+- **Consistency**: A standardized format makes it easier to understand commit history.
+- **Automation**: Enables automatic changelog generation and semantic versioning.
+- **Traceability**: Links commits directly to Jira tickets, ensuring clear tracking of features and fixes.
+
+By following these rules, the team maintains high code quality and process integrity.
