@@ -72,18 +72,14 @@ developers ensure their commits adhere to the [Conventional Commits specificatio
    - Allowed types: feat, fix, perf, refactor, style, test, chore, docs, hotfix, build
 
 3. **Jira Ticket Requirement for Features**  
-   - Commits of type `feat` must include a Jira ticket at the end in the format `PS-###`.
-   - Example: `feat(ui): add new button PS-123`
+   - Commits of type `feat` must include a Jira ticket within the scope parenthesis in the format `PS-###`.
+   - Example: `feat(PS-123): add new button`
 4. **Commit Message Length**
    - The commit message must be less than 72 characters.
    - If the commit message is longer than 72 characters, the commit will be rejected.
 
 #### Setting Up the Hook
-Ensure the Git hooks are properly configured by running:
-
-```sh
-git config core.hooksPath .githooks
-```
+The .githooks/commit-msg should be enforced implictly in each repository.
 
 Once set, every commit message will be automatically validated before being recorded in the repository.
 
